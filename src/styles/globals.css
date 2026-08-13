@@ -1,0 +1,26 @@
+:root {
+  --text: #050505;
+  --bg: #F5F0E8;
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: 'Barlow Condensed', system-ui, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color: var(--text);
+  background: var(--bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F5F0E8;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
