@@ -1,0 +1,181 @@
+/* ─────────────────────────────────────────────────────────
+   HowItWorks.css — Soulbound Card System
+   Section 04: HOW IT WORKS
+   ───────────────────────────────────────────────────────── */
+
+.how-it-works-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Section header (no card box) ───────────────────── */
+.how-section-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 4px;
+  gap: 24px;
+}
+
+.how-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.how-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  border: 3px solid #050505;
+  box-shadow: 3px 3px 0 #050505;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-family: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #050505;
+  user-select: none;
+  width: fit-content;
+}
+
+.how-label .asterisk {
+  color: #FF1F1F;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.how-heading {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.how-heading .line-black { color: #050505; display: block; }
+.how-heading .line-red   { color: #FF1F1F; display: block; }
+
+.how-subtext {
+  font-family: 'Barlow Condensed', 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: 600;
+  color: #050505;
+  line-height: 1.5;
+  max-width: 480px;
+  align-self: flex-end;
+  padding-bottom: 4px;
+}
+
+/* ── 4-Step horizontal card row ──────────────────────── */
+.how-steps-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;          /* no gap — arrows live between cards */
+  width: 100%;
+}
+
+/* ── Step card ───────────────────────────────────────── */
+.how-step-card {
+  flex: 1;
+  background-color: #FFFFFF;
+  border: 4px solid #050505;
+  border-radius: 24px;
+  box-shadow: 6px 6px 0 #050505;
+  padding: 28px 24px 24px 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+/* Adjacent cards: collapse shared border into one */
+.how-step-card + .how-arrow-connector + .how-step-card {
+  border-left: 0;
+  border-radius: 0 24px 24px 0;
+}
+
+/* ── Arrow connector between steps ───────────────────── */
+.how-arrow-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Step card top area ──────────────────────────────── */
+.how-step-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.how-step-num {
+  font-family: 'Barlow Condensed', Impact, sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1;
+  user-select: none;
+}
+
+.how-step-pill {
+  border: 2px solid #050505;
+  border-radius: 5px;
+  padding: 4px 10px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 0 #050505;
+}
+
+/* ── Step title ──────────────────────────────────────── */
+.how-step-title {
+  font-family: 'Barlow Condensed', Impact, sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  color: #050505;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+/* ── Step description ────────────────────────────────── */
+.how-step-desc {
+  font-family: 'Barlow Condensed', 'Courier New', Courier, monospace;
+  font-size: 15px;
+  font-weight: 600;
+  color: #050505;
+  line-height: 1.4;
+}
+
+/* ── Step visual bottom area ─────────────────────────── */
+.how-step-visual {
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+/* ── Character inside step card ──────────────────────── */
+.how-step-char {
+  display: flex;
+  justify-content: flex-end;
+}

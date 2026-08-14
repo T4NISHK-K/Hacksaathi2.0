@@ -1,0 +1,230 @@
+/* ─────────────────────────────────────────────────────────
+   WhatYouCanDo.css — Rebalanced Light Surface Palette
+   Section 05: BUILD WITH HACKSAATHI
+   ───────────────────────────────────────────────────────── */
+
+.what-you-can-do-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Section header ──────────────────────────────────── */
+.what-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0 4px;
+}
+
+.what-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  border: 3px solid #050505;
+  box-shadow: 3px 3px 0 #050505;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-family: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #050505;
+  user-select: none;
+  width: fit-content;
+}
+
+.what-label .asterisk {
+  color: #FF1F1F;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.what-heading {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.what-heading .line-black { color: #050505; display: block; }
+.what-heading .line-red   { color: #FF1F1F; display: block; }
+
+/* ── Full-width hero product panel ───────────────────── */
+.what-hero-panel {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 4px solid #050505;
+  border-radius: 24px;
+  box-shadow: 6px 6px 0 #050505;
+  padding: 40px 48px 0 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px;
+  overflow: hidden;
+  min-height: 360px;
+}
+
+.what-hero-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 40px;
+}
+
+.what-hero-right {
+  flex: 1.2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-self: stretch;
+}
+
+/* ── Team matching widget inside hero panel ───────────── */
+.what-team-widget {
+  background-color: #F5F0E8;
+  border: 3px solid #050505;
+  border-radius: 18px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 4px 4px 0 #050505;
+}
+
+.what-team-widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.what-team-widget-title {
+  font-family: 'Barlow Condensed', Impact, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: #050505;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.what-profile-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  border: 2.5px solid #050505;
+  border-radius: 10px;
+  padding: 10px 14px;
+  box-shadow: 2px 2px 0 #050505;
+}
+
+.what-profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.what-profile-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  color: #050505;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.what-profile-skill {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+  border: 1.5px solid #050505;
+  width: fit-content;
+  line-height: 1;
+}
+
+/* ── Bottom split row ─────────────────────────────────── */
+.what-split-row {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* ── Feature cards ───────────────────────────────────── */
+.what-feature-card {
+  flex: 1;
+  background-color: #FFFFFF;
+  border: 4px solid #050505;
+  border-radius: 24px;
+  box-shadow: 6px 6px 0 #050505;
+  padding: 32px 32px 0 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  overflow: hidden;
+}
+
+.what-feature-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.what-feature-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 2.5px solid #050505;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  user-select: none;
+  box-shadow: 2px 2px 0 #050505;
+  width: fit-content;
+}
+
+.what-feature-title {
+  font-family: 'Barlow Condensed', Impact, sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: #050505;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+
+.what-feature-desc {
+  font-family: 'Barlow Condensed', 'Courier New', Courier, monospace;
+  font-size: 15px;
+  font-weight: 600;
+  color: #050505;
+  line-height: 1.45;
+}
+
+.what-feature-visual {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}

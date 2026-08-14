@@ -1,26 +1,32 @@
-// App.jsx
-// ─────────────────────────────────────────────────────────────────────────────
-// Root component. Renders the exact 1536×864 (16:9) SVG canvas and composes
-// the structural sub-components:
-//   OuterFrame  — cream background + structural borders/dividers/hero panel
-//   Navbar      — header navigation bar
-//   Sidebar     — left decorative column with dot grids, D-shapes, red block
-//   Hero        — hero section with headline, CTA buttons & 3D hero visuals
-// ─────────────────────────────────────────────────────────────────────────────
 import React from 'react';
 import './styles/App.css';
 
 import OuterFrame from './components/layout/OuterFrame';
-import Navbar from './components/layout/Navbar';
-import Sidebar from './components/layout/Sidebar';
-import Hero from './components/hero/Hero';
-import ProductIntro from './components/ProductIntro/ProductIntro';
+import Navbar    from './components/layout/Navbar';
+import Sidebar   from './components/layout/Sidebar';
+import Hero      from './components/hero/Hero';
 
+import ProductIntro  from './components/ProductIntro/ProductIntro';
+import WhoItsFor     from './components/WhoItsFor/WhoItsFor';
+import HowItWorks    from './components/HowItWorks/HowItWorks';
+import WhatYouCanDo  from './components/WhatYouCanDo/WhatYouCanDo';
+import FinalCTA      from './components/FinalCTA/FinalCTA';
+import Footer        from './components/Footer/Footer';
+
+/**
+ * App — HackSaathi Landing Page
+ * Soulbound-Inspired Card Panel Architecture
+ *
+ * The page is a continuous canvas (.canvas-wrapper) on cream #F5F0E8.
+ * All sections are sibling cards inside .landing-page with a 24px gap.
+ * The browser scroll controls page navigation — no nested scrolling.
+ */
 export default function App() {
   return (
     <div className="canvas-wrapper">
       <main className="landing-page">
-        {/* ── FRAME 01: HERO SECTION ── */}
+
+        {/* ── 01: HERO — Fixed 16:9 SVG frame (untouched) ── */}
         <section className="hero-section">
           <div className="frame-container">
             <svg
@@ -28,27 +34,45 @@ export default function App() {
               className="neo-brutalist-svg"
               xmlns="http://www.w3.org/2000/svg"
             >
-              {/* 1. Structural skeleton */}
               <OuterFrame />
-
-              {/* 2. Navbar header */}
               <Navbar />
-
-              {/* 3. Left decorative sidebar */}
               <Sidebar />
-
-              {/* 4. Hero section content */}
               <Hero />
             </svg>
           </div>
         </section>
 
-        {/* ── FRAME 02: WHAT THE PRODUCT IS SECTION ── */}
+        {/* ── 02: WHAT IS HACKSAATHI? — SPLIT two-card row ── */}
         <section className="product-intro-section">
           <ProductIntro />
         </section>
+
+        {/* ── 03: WHO IS HACKSAATHI FOR? — Alternating card rows ── */}
+        <section className="page-section">
+          <WhoItsFor />
+        </section>
+
+        {/* ── 04: HOW IT WORKS — Horizontal 4-card row ── */}
+        <section className="page-section">
+          <HowItWorks />
+        </section>
+
+        {/* ── 05: BUILD WITH HACKSAATHI — Full-width hero + split row ── */}
+        <section className="page-section">
+          <WhatYouCanDo />
+        </section>
+
+        {/* ── 06: FINAL CTA — Full-width conversion card ── */}
+        <section className="page-section">
+          <FinalCTA />
+        </section>
+
+        {/* ── 07: FOOTER — Dark card ── */}
+        <section className="page-section">
+          <Footer />
+        </section>
+
       </main>
     </div>
   );
 }
-

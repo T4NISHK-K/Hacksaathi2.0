@@ -1,148 +1,138 @@
-/* ProductIntro.css */
-/* ─────────────────────────────────────────────────────────────────────────────
-   HackSaathi - What The Product Is Section Styles
-   Neo-Brutalist + Minimal Editorial Design System
-   ───────────────────────────────────────────────────────────────────────────── */
+/* ─────────────────────────────────────────────────────────
+   ProductIntro.css — Soulbound Card System
+   SPLIT: LEFT text card (42%) | RIGHT visual card (56%)
+   ───────────────────────────────────────────────────────── */
 
-.product-intro-frame {
-  background-color: #F5F0E8;
-  border: 4px solid #050505;
-  border-radius: 26px;
-  box-shadow: 6px 6px 0 #050505;
-  padding: 52px 56px 52px 56px;
-  margin: 0;
+/* Outer section wrapper — zero extra spacing beyond the page gap */
+.product-intro-section-container {
   width: 100%;
-  box-sizing: border-box;
-  position: relative;
-  overflow: visible;
-}
-
-.product-intro-top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  margin-bottom: 48px;
-}
-
-.product-intro-left {
-  width: 41%;
-  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  gap: 24px;               /* card-gap */
 }
 
-.product-intro-right {
-  width: 59%;
-  flex-grow: 1;
-  position: relative;
+/* ── Split row ───────────────────────────────────────── */
+.product-intro-split-row {
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  gap: 24px;
+  align-items: stretch;
 }
 
-/* Editorial section label badge */
+/* ── Left card: text content ────────────────────────── */
+.product-intro-left-card {
+  flex: 0 0 42%;
+  background-color: #FFFFFF;
+  border: 4px solid #050505;
+  border-radius: 24px;
+  box-shadow: 6px 6px 0 #050505;
+  padding: 36px 36px 32px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+}
+
+/* ── Right card: visual panel ───────────────────────── */
+.product-intro-right-card {
+  flex: 1;
+  background-color: #FFFFFF;
+  border: 4px solid #050505;
+  border-radius: 24px;
+  box-shadow: 6px 6px 0 #050505;
+  padding: 0;
+  position: relative;
+  overflow: hidden;          /* clips the red polygon neatly */
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Section label ───────────────────────────────────── */
 .product-section-label {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #FFFFFF;
+  background-color: #F5F0E8;
   border: 3px solid #050505;
   box-shadow: 3px 3px 0 #050505;
   border-radius: 8px;
-  padding: 7px 14px;
+  padding: 6px 14px;
   font-family: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
-  font-size: 16px;
-  font-weight: 800;
+  font-size: 15px;
+  font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #050505;
-  margin-bottom: 24px;
   user-select: none;
+  width: fit-content;
 }
 
 .product-section-label .asterisk {
   color: #FF1F1F;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1;
 }
 
-/* Main Heading */
+/* ── Main heading ────────────────────────────────────── */
 .product-heading {
   font-family: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
-  font-size: 92px;
+  font-size: 76px;
   font-weight: 900;
   line-height: 0.88;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  margin-bottom: 24px;
   user-select: none;
 }
 
-.product-heading .line-black {
-  color: #050505;
-  display: block;
-}
+.product-heading .line-black { color: #050505; display: block; }
+.product-heading .line-red   { color: #FF1F1F; display: block; }
 
-.product-heading .line-red {
-  color: #FF1F1F;
-  display: block;
-}
-
-/* Description paragraph */
+/* ── Description paragraph ───────────────────────────── */
 .product-desc {
   font-family: 'Barlow Condensed', 'Courier New', Courier, monospace;
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 600;
   color: #050505;
-  line-height: 1.45;
-  max-width: 470px;
-  margin-bottom: 28px;
-  letter-spacing: 0.01em;
+  line-height: 1.5;
+  max-width: 430px;
 }
 
-/* Product Statement Card */
+/* ── Bottom statement card inside left panel ────────── */
 .product-statement-card {
-  background-color: #F5F0E8;
-  border: 3.5px solid #050505;
-  box-shadow: 5px 5px 0 #050505;
+  background-color: #050505;
+  border: 3px solid #050505;
   border-radius: 12px;
-  padding: 16px 22px;
-  width: 390px;
-  max-width: 100%;
+  padding: 14px 18px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  user-select: none;
+  gap: 2px;
 }
 
 .statement-line {
   font-family: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
-  font-size: 21px;
+  font-size: 20px;
   font-weight: 900;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  line-height: 1.15;
+  line-height: 1.1;
 }
 
-.statement-line.black {
-  color: #050505;
-}
+.statement-line.black { color: #FFFFFF; }
+.statement-line.red   { color: #FF1F1F; }
 
-.statement-line.red {
-  color: #FF1F1F;
-}
-
-/* Profiles inside Central Card */
+/* ── Profile grid (inside ProductMatchingCard) ───────── */
 .profile-card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px 16px;
-  margin-top: 18px;
+  gap: 12px 14px;
+  margin-top: 14px;
 }
 
+/* ── Profile item ────────────────────────────────────── */
 .profile-item {
   display: flex;
   align-items: center;
@@ -150,121 +140,50 @@
   background-color: #FFFFFF;
   border: 2.5px solid #050505;
   box-shadow: 3px 3px 0 #050505;
-  border-radius: 12px;
-  padding: 8px 12px;
-  position: relative;
+  border-radius: 10px;
+  padding: 8px 10px;
 }
 
 .profile-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
   overflow: hidden;
 }
 
 .profile-name {
   font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-  font-size: 15px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 900;
   color: #050505;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  line-height: 1;
   white-space: nowrap;
-  text-overflow: ellipsis;
   overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1;
 }
 
 .profile-skill {
   display: inline-block;
   align-self: flex-start;
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 11px;
-  font-weight: 800;
+  font-size: 10px;
+  font-weight: 900;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 3px 7px;
+  padding: 2px 6px;
   border-radius: 4px;
   border: 1.5px solid #050505;
   line-height: 1;
 }
 
-.skill-frontend {
-  background-color: #7650E8;
-  color: #FFFFFF;
-}
+.skill-frontend { background: #7650E8; color: #FFFFFF; }
+.skill-ux       { background: #F06FAE; color: #050505; }
+.skill-ai       { background: #FFC928; color: #050505; }
+.skill-cyber    { background: #FF1F1F; color: #FFFFFF; }
 
-.skill-ux {
-  background-color: #F06FAE;
-  color: #050505;
-}
-
-.skill-ai {
-  background-color: #FFC928;
-  color: #050505;
-}
-
-.skill-cyber {
-  background-color: #FF1F1F;
-  color: #FFFFFF;
-}
-
-/* Workflow Strip */
-.product-workflow-panel {
-  background-color: #F5F0E8;
-  border: 4px solid #050505;
-  box-shadow: 5px 5px 0 #050505;
-  border-radius: 18px;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-.workflow-item {
-  flex: 1;
-  padding: 22px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  position: relative;
-}
-
-.workflow-item:not(:last-child) {
-  border-right: 3px solid #050505;
-}
-
-.workflow-num {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
-  font-size: 32px;
-  font-weight: 900;
-  color: #FF1F1F;
-  line-height: 1;
-  letter-spacing: -0.01em;
-}
-
-.workflow-title {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
-  font-size: 20px;
-  font-weight: 900;
-  color: #050505;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  line-height: 1.1;
-}
-
-.workflow-desc {
-  font-family: 'Barlow Condensed', 'Courier New', Courier, monospace;
-  font-size: 14px;
-  font-weight: 600;
-  color: #050505;
-  line-height: 1.35;
-}
-
-/* Responsive desktop bounds */
-@media (max-width: 1280px) {
-  .product-heading { font-size: 80px; }
-  .product-desc { font-size: 17px; }
-  .product-intro-frame { padding: 40px 36px 36px 36px; }
+/* ── Visual overflow fix ─────────────────────────────── */
+.product-intro-visual {
+  overflow: visible !important;
 }

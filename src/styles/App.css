@@ -1,56 +1,70 @@
+/* ─────────────────────────────────────────────────────────
+   HackSaathi — Global Layout System
+   Soulbound-Inspired Card Panel Architecture
+   ───────────────────────────────────────────────────────── */
+
 :root {
-  --bg-cream: #F5F0E8;
-  --border-black: #050505;
+  --bg-cream:    #F5F0E8;
+  --col-black:   #050505;
+  --col-red:     #FF1F1F;
+  --col-purple:  #7650E8;
+  --col-yellow:  #FFC928;
+  --col-pink:    #F06FAE;
+  --col-white:   #FFFFFF;
+
+  /* Shared card tokens */
+  --card-border:  4px solid #050505;
+  --card-shadow:  6px 6px 0 #050505;
+  --card-radius:  24px;
+  --card-gap:     24px;
 }
 
-* {
+/* ── Reset ────────────────────────────────────────────── */
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html,
-body,
-#root {
+html, body, #root {
   width: 100%;
   min-height: 100vh;
   background-color: var(--bg-cream);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
+/* ── Outer Canvas ─────────────────────────────────────── */
 .canvas-wrapper {
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 24px 24px 60px 24px;
+  padding: 24px 32px 80px 32px;
   background-color: var(--bg-cream);
 }
 
+/* ── Landing Page Spine ───────────────────────────────── */
 .landing-page {
   width: 100%;
-  max-width: 1536px;
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 48px;
+  align-items: stretch;
+  gap: var(--card-gap);        /* tight Soulbound-style card gaps */
 }
 
+/* ── Hero section wrapper ─────────────────────────────── */
 .hero-section {
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
 .frame-container {
   width: 100%;
-  max-width: 1536px;
   aspect-ratio: 16 / 9;
   position: relative;
-  filter: drop-shadow(6px 6px 0px var(--border-black));
+  filter: drop-shadow(var(--card-shadow));
 }
 
 .neo-brutalist-svg {
@@ -59,29 +73,132 @@ body,
   display: block;
 }
 
-.product-intro-section {
-  width: 100%;
-  max-width: 1536px;
+/* ── Shared card-row utility (Soulbound split pattern) ── */
+.card-row {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  gap: var(--card-gap);
+  width: 100%;
+  align-items: stretch;
 }
 
-/* Custom Neo-Brutalist Document Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
+/* ── Shared page-section pass-through ────────────────── */
+.product-intro-section,
+.page-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-gap);
 }
 
+/* ── Card system shared tokens ───────────────────────── */
+.hs-card {
+  background-color: var(--col-white);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.hs-card--cream {
+  background-color: var(--bg-cream);
+}
+
+.hs-card--black {
+  background-color: var(--col-black);
+  color: var(--col-white);
+}
+
+.hs-card--red {
+  background-color: var(--col-red);
+  color: var(--col-white);
+}
+
+/* ── Section label badge ─────────────────────────────── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--col-white);
+  border: 3px solid var(--col-black);
+  box-shadow: 3px 3px 0 var(--col-black);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-family: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--col-black);
+  user-select: none;
+  width: fit-content;
+}
+
+.section-label .asterisk {
+  color: var(--col-red);
+  font-size: 17px;
+  line-height: 1;
+}
+
+/* ── Section heading ─────────────────────────────────── */
+.section-heading {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.section-heading--xl  { font-size: 88px; }
+.section-heading--lg  { font-size: 72px; }
+.section-heading--md  { font-size: 56px; }
+.section-heading--sm  { font-size: 40px; }
+
+.text-black  { color: var(--col-black); }
+.text-red    { color: var(--col-red); }
+.text-purple { color: var(--col-purple); }
+.text-yellow { color: var(--col-yellow); }
+.text-pink   { color: var(--col-pink); }
+
+/* ── Body copy ───────────────────────────────────────── */
+.section-body {
+  font-family: 'Barlow Condensed', 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--col-black);
+  line-height: 1.5;
+}
+
+/* ── Shared sticker / pill badge ─────────────────────── */
+.sticker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 2.5px solid var(--col-black);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  user-select: none;
+  box-shadow: 2px 2px 0 var(--col-black);
+}
+
+/* ── Custom scrollbar ────────────────────────────────── */
+::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track {
-  background: #F5F0E8;
-  border-left: 2.5px solid #050505;
+  background: var(--bg-cream);
+  border-left: 2.5px solid var(--col-black);
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #FF1F1F;
-  border: 2px solid #050505;
+  background: var(--col-red);
+  border: 2px solid var(--col-black);
   border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #050505;
+  background: var(--col-black);
 }
