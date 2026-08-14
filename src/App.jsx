@@ -14,29 +14,41 @@ import OuterFrame from './components/layout/OuterFrame';
 import Navbar from './components/layout/Navbar';
 import Sidebar from './components/layout/Sidebar';
 import Hero from './components/hero/Hero';
+import ProductIntro from './components/ProductIntro/ProductIntro';
 
 export default function App() {
   return (
     <div className="canvas-wrapper">
-      <div className="frame-container">
-        <svg
-          viewBox="0 0 1536 864"
-          className="neo-brutalist-svg"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* 1. Structural skeleton */}
-          <OuterFrame />
+      <main className="landing-page">
+        {/* ── FRAME 01: HERO SECTION ── */}
+        <section className="hero-section">
+          <div className="frame-container">
+            <svg
+              viewBox="0 0 1536 864"
+              className="neo-brutalist-svg"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* 1. Structural skeleton */}
+              <OuterFrame />
 
-          {/* 2. Navbar header */}
-          <Navbar />
+              {/* 2. Navbar header */}
+              <Navbar />
 
-          {/* 3. Left decorative sidebar */}
-          <Sidebar />
+              {/* 3. Left decorative sidebar */}
+              <Sidebar />
 
-          {/* 4. Hero section */}
-          <Hero />
-        </svg>
-      </div>
+              {/* 4. Hero section content */}
+              <Hero />
+            </svg>
+          </div>
+        </section>
+
+        {/* ── FRAME 02: WHAT THE PRODUCT IS SECTION ── */}
+        <section className="product-intro-section">
+          <ProductIntro />
+        </section>
+      </main>
     </div>
   );
 }
+
