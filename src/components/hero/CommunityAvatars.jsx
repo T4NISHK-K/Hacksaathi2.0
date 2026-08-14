@@ -1,3 +1,4 @@
+
 import React from 'react';
 import AvatarCropFace from '../ui/AvatarCropFace';
 
@@ -52,30 +53,35 @@ export default function CommunityAvatars() {
         </span>
       </div>
 
-      {/* Curved arrow */}
+      {/* Looped Arrow with Dashed Start & Solid Filled Arrowhead */}
       <svg
-        width="90"
-        height="65"
-        viewBox="0 0 90 65"
+        width="80"
+        height="60"
+        viewBox="0 0 100 80"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
-        style={{ marginLeft: '12px', alignSelf: 'center', flexShrink: 0 }}
+        style={{
+          marginLeft: '8px',
+          alignSelf: 'center',
+          flexShrink: 0,
+          transform: 'translateY(-12px)'
+        }}
       >
+        {/* Main path with loop and dashed stroke */}
         <path
-          d="M 10,58 C 14,46 22,28 44,14 C 52,9 64,7 72,11"
+          d="M 12 58 C 22 68, 38 66, 52 50 C 62 38, 54 22, 44 32 C 36 40, 52 58, 68 44 C 76 37, 83 22, 85 14"
           stroke="#050505"
-          strokeWidth="2.2"
+          strokeWidth="3.2"
           strokeLinecap="round"
+          strokeDasharray="0.1 9"
           fill="none"
         />
-        <path
-          d="M 72,11 L 62,8 M 72,11 L 70,21"
-          stroke="#050505"
-          strokeWidth="2.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="none"
+
+        {/* Solid filled arrowhead */}
+        <polygon
+          points="85,10 73,19 86,26"
+          fill="#050505"
         />
       </svg>
     </div>
