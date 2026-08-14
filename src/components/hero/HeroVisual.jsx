@@ -1,3 +1,4 @@
+
 import React from 'react';
 import HeroRedPanel from './HeroRedPanel';
 import HeroCharacters from './HeroCharacters';
@@ -5,8 +6,6 @@ import HeroSmartMatchingCard from './HeroSmartMatchingCard';
 import HeroCodeSticker from './HeroCodeSticker';
 import HeroBottomCard from './HeroBottomCard';
 import HeroTag from './HeroTag';
-
-import handwrittenArrowSvg from '../../assets/icons/handwritten-arrow-1786448327383.svg';
 
 /**
  * HeroVisual Component
@@ -28,23 +27,38 @@ export default function HeroVisual() {
       {/* ── ZONE B: Compact Red Graphic Backdrop ── */}
       <HeroRedPanel />
 
-      {/* ── ZONE A: Handwritten Arrow SVG (BEHIND Smart Matching Card) ── */}
-      <div
+      {/* ── ZONE A: Dashed Arch Arrow (Matches Reference Image) ── */}
+      <svg
+        width="220"
+        height="100"
+        viewBox="0 0 220 130"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
         style={{
           position: 'absolute',
-          top: '15px',
+          top: '30px',
           left: '170px',
-          width: '250px',
           zIndex: 2,
           pointerEvents: 'none',
         }}
       >
-        <img
-          src={handwrittenArrowSvg}
-          alt="Handwritten curved arrow"
-          style={{ width: '100%', height: 'auto', display: 'block' }}
+        {/* Dashed curve launching up from beside purple badge and leveling out rightward */}
+        <path
+          d="M 18 120 C 12 55, 75 18, 185 28"
+          stroke="#050505"
+          strokeWidth="2.2"
+          strokeDasharray="6 6"
+          strokeLinecap="round"
+          fill="none"
         />
-      </div>
+
+        {/* Solid arrowhead pointing right */}
+        <polygon
+          points="202,30 184,20 186,38"
+          fill="#050505"
+        />
+      </svg>
 
       {/* ── ZONE A: Purple "FIND THE RIGHT PEOPLE" Badge (Top Left) ── */}
       <div
